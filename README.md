@@ -26,7 +26,7 @@ The final inverse-mapped intraoperative mesh is saved as:
 registered_model.obj
 ```
 
-This mesh is in the original preoperative millimeter coordinate space.
+This mesh is in the original preoperative millimeter-scale coordinate space.
 
 ### `distanceEvaluation.py`
 
