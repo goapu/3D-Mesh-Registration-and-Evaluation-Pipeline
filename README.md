@@ -34,6 +34,7 @@ Evaluates registration quality after inverse mapping using:
 
 * one-way vertex-to-surface distance
 * optional symmetric surface distance
+* optional vertex-index correspondence evaluation from Excel
 * summary metrics: mean, median, RMSE, P90, P95, P99, and threshold percentages
 * histogram and CDF plots
 * MeshLab-compatible colored error heatmap
@@ -66,10 +67,34 @@ This produces `registered_model.obj`, which is used for evaluation against the o
 
 ## Installation
 
+Create and activate a Python environment:
+
 ```bash
 conda create -n meshreg python=3.10
 conda activate meshreg
+```
+
+Install dependencies:
+
+```bash
 pip install numpy scipy trimesh open3d matplotlib pandas
+```
+
+Or install from `requirements.txt`:
+
+```bash
+pip install -r requirements.txt
+```
+
+Recommended `requirements.txt`:
+
+```text
+numpy
+scipy
+trimesh
+open3d
+matplotlib
+pandas
 ```
 
 ---
@@ -109,7 +134,7 @@ The script identifies files using anatomical keywords in the filenames.
 ## Run Registration
 
 ```bash
-python src/landmark_scale_ransac_icp.py \
+python landmark_scale_ransac_icp.py \
   --preop "/path/to/preop_folder" \
   --intraop "/path/to/intraop_folder" \
   --output "/path/to/registration_output"
@@ -142,7 +167,7 @@ registration_output/
 ## Run Evaluation
 
 ```bash
-python src/distanceEvaluation.py \
+python distanceEvaluation.py \
   --preop_obj "/path/to/preoperative_mucosa.obj" \
   --intra_obj "/path/to/registration_output/registered_model.obj" \
   --output_dir "/path/to/evaluation_output"
@@ -151,7 +176,7 @@ python src/distanceEvaluation.py \
 For symmetric evaluation:
 
 ```bash
-python src/distanceEvaluation.py \
+python distanceEvaluation.py \
   --preop_obj "/path/to/preoperative_mucosa.obj" \
   --intra_obj "/path/to/registration_output/registered_model.obj" \
   --output_dir "/path/to/evaluation_output" \
@@ -174,6 +199,28 @@ Open `registered_model_heatmap.obj` in MeshLab and enable:
 ```text
 Render → Show Vertex Colors
 ```
+
+---
+
+## Optional Correspondence Evaluation
+
+If an Excel file with 1-based vertex-index correspondences is available, run:
+
+```bash
+python distanceEvaluation.py \
+  --preop_obj "/path/to/preoperative_mucosa.obj" \
+  --intra_obj "/path/to/registration_output/registered_model.obj" \
+  --output_dir "/path/to/evaluation_output" \
+  --mapping_xlsx "/path/to/correspondences.xlsx"
+```
+
+The first two Excel columns should contain:
+
+```text
+preoperative_vertex_index, intraoperative_vertex_index
+```
+
+Both indices are expected to be 1-based.
 
 ---
 
@@ -215,4 +262,39 @@ This repository is shared for demonstration and portfolio purposes. Reuse, redis
 
 ---
 
+## Recommended `.gitignore`
+
+```gitignore
+__pycache__/
+*.pyc
+.DS_Store
+
+# Local data and generated outputs
+data/
+outputs/
+results/
+*.obj
+*.ply
+*.stl
+*.npy
+*.npz
+*.csv
+*.xlsx
+*.png
+
+# Environments
+.venv/
+venv/
+env/
+```
+
+---
+
+## Author
+
+Dilip Goswami
+M.Sc. Geodesy and Geoinformation Science
+Technische Universität Berlin
+
+```
 ```
