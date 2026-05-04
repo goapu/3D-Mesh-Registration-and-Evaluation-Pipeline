@@ -1,4 +1,3 @@
-
 ````markdown
 # 3D Mesh Registration and Evaluation Pipeline
 
@@ -298,4 +297,4 @@ M.Sc. Geodesy and Geoinformation Science
 Technische Universität Berlin
 
 ```
-
+```
