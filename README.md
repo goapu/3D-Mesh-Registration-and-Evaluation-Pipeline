@@ -1,4 +1,4 @@
-````markdown
+
 # 3D Mesh Registration and Evaluation Pipeline
 
 **Author:** Dilip Goswami
@@ -26,7 +26,7 @@ The final inverse-mapped intraoperative mesh is saved as:
 registered_model.obj
 ```
 
-This mesh is in the original preoperative millimeter-scale coordinate space.
+This mesh is in the original preoperative millimeter coordinate space.
 
 ### `distanceEvaluation.py`
 
@@ -296,4 +296,4 @@ Dilip Goswami
 M.Sc. Geodesy and Geoinformation Science
 Technische Universität Berlin
 
-```
+
