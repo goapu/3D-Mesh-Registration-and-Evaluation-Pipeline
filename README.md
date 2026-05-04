@@ -24,7 +24,7 @@ The final inverse-mapped intraoperative mesh is saved as:
 
 ```text
 registered_model.obj
-```
+````
 
 This mesh is in the original preoperative millimeter coordinate space.
 
@@ -296,4 +296,5 @@ Dilip Goswami
 M.Sc. Geodesy and Geoinformation Science
 Technische Universität Berlin
 
+```
 ```
