@@ -297,4 +297,3 @@ M.Sc. Geodesy and Geoinformation Science
 Technische Universität Berlin
 
 ```
-```
