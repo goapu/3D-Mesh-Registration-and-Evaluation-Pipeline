@@ -292,10 +292,8 @@ env/
 
 ## Author
 
-```
-Dilip Goswami
-M.Sc. Geodesy and Geoinformation Science
+Dilip Goswami  
+M.Sc. Geodesy and Geoinformation Science  
 Technische Universität Berlin
-```
 
 
