@@ -215,11 +215,4 @@ This repository is shared for demonstration and portfolio purposes. Reuse, redis
 
 ---
 
-## Author
-
-Dilip Goswami
-M.Sc. Geodesy and Geoinformation Science
-Technische Universität Berlin
-
-```
 ```
